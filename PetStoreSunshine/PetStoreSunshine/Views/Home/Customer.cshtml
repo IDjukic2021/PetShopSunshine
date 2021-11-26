@@ -1,0 +1,29 @@
+﻿@model List<PetStoreSunshine.Data.User>
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Naši kupci (Komentari)</h1>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Napomena</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.LastName</td>
+            <td>@item.Note</td>
+        </tr>
+        }
+    </tbody>
+
+</table>

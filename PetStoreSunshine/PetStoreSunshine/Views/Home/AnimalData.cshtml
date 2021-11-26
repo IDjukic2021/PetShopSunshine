@@ -1,0 +1,41 @@
+﻿@model List<PetStoreSunshine.Data.Animal>
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Naše životinje</h1>
+</div>
+<p class="float-right">
+    <a asp-action="Create" class="btn btn-outline-primary">Dodaj novog ljubimca</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width:180px">Opcije</th>
+            <th>Vrsta</th>
+            <th>Veličina</th>
+            <th>Podvrsta</th>
+            <th>Ime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Create", new { @item.AnimalsId, @item.Type, @item.Size, @item.SubKingdoms, @item.Name }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Delete", "Delete", new { @item.AnimalsId }, new { @class = "btn btn-danger" })
+            </td>
+            <td>@item.Type</td>
+            <td>@item.Size</td>
+            <td>@item.SubKingdoms</td>
+            <td>@item.Name</td>
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model PetStoreSunshine.Data.Animal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h4>Dodaj novog ljubimca</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="AnimalsId" class="form-control" type="hidden" />
+                <span asp-validation-for="AnimalsId" type="hidden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Type" class="control-label">Vrsta</label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label">Veličina</label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubKingdoms" class="control-label">Podvrsta</label>
+                <input asp-for="SubKingdoms" class="form-control" />
+                <span asp-validation-for="SubKingdoms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Ime</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+                <a asp-action="AnimalData" class="btn btn-success">Nazad</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PetStoreSunshine.Data.ViewModel> 
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container;">
+    <div class="text-center">
+        <h1 class="display-4">Narudžbe</h1>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Životinja</th>
+                <th>Hrana</th>
+                <th>Količina</th>
+                <th>Napomena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Animal.Type</td>
+                <td>@item.AnimalFood.Name</td>
+                <td>@item.Order.Piece</td>
+                <td>@item.Order.Note</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
