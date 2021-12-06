@@ -11,9 +11,8 @@
         <form asp-action="CreateAnimalFood">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="AnimalFoodId" class="control-label" type="hidden"></label>
-                @*<input asp-for="AnimalFoodId" class="form-control" />*@
-                <span asp-validation-for="AnimalFoodId" class="text-danger"></span>
+                <input asp-for="AnimalFoodId" class="form-control" type="hidden" />
+                <span asp-validation-for="AnimalFoodId" type="hidden" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
